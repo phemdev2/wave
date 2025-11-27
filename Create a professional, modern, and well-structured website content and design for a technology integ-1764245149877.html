@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureWave Technology - Your Trusted Technology Integrator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .gradient-bg-dark {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .project-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+        .project-card img {
+            transition: all 0.3s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .project-card:hover img {
+            filter: brightness(1.1);
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .nav-link:hover {
+            color: #667eea;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        .stats-counter {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .feature-icon {
+            transition: all 0.3s ease;
+        }
+        .feature-icon:hover {
+            transform: rotate(10deg) scale(1.1);
+        }
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+        .about-image {
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-shield-alt text-2xl gradient-text" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                    <span class="font-bold text-xl text-gray-800">SecureWave</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <span class="nav-link text-gray-700 font-medium" onclick="scrollToSection('home')">Home</span>
+                    <span class="nav-link text-gray-700 font-medium" onclick="scrollToSection('services')">Services</span>
+                    <span class="nav-link text-gray-700 font-medium" onclick="scrollToSection('projects')">Projects</span>
+                    <span class="nav-link text-gray-700 font-medium" onclick="scrollToSection('about')">About</span>
+                    <span class="nav-link text-gray-700 font-medium" onclick="scrollToSection('contact')">Contact</span>
+                    <button class="btn-primary text-white px-6 py-2 rounded-lg font-medium" onclick="scrollToSection('contact')">Get Started</button>
+                </div>
+
+                <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <div id="mobileMenu" class="mobile-menu bg-gray-50 md:hidden">
+                <div class="px-4 py-4 space-y-3">
+                    <span class="block nav-link text-gray-700 font-medium py-2" onclick="scrollToSection('home'); toggleMobileMenu()">Home</span>
+                    <span class="block nav-link text-gray-700 font-medium py-2" onclick="scrollToSection('services'); toggleMobileMenu()">Services</span>
+                    <span class="block nav-link text-gray-700 font-medium py-2" onclick="scrollToSection('projects'); toggleMobileMenu()">Projects</span>
+                    <span class="block nav-link text-gray-700 font-medium py-2" onclick="scrollToSection('about'); toggleMobileMenu()">About</span>
+                    <span class="block nav-link text-gray-700 font-medium py-2" onclick="scrollToSection('contact'); toggleMobileMenu()">Contact</span>
+                    <button class="w-full btn-primary text-white px-6 py-2 rounded-lg font-medium" onclick="scrollToSection('contact'); toggleMobileMenu()">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+                        Your Trusted Technology Integrator
+                    </h1>
+                    <p class="text-lg text-gray-100">
+                        Advanced Security • Smart Networking • Reliable Data Storage • Green Energy Solutions
+                    </p>
+                    <p class="text-gray-200">
+                        SecureWave Technology delivers cutting-edge solutions built on integrity, professionalism, and customer-first service.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <button class="bg-white text-purple-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition" onclick="scrollToSection('contact')">Request a Quote</button>
+                        <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-purple-600 transition" onclick="scrollToSection('contact')">Book Inspection</button>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=500&fit=crop" alt="Technology Integration" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center stats-counter">
+                    <div class="text-3xl md:text-4xl font-bold gradient-text" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">500+</div>
+                    <p class="text-gray-600 mt-2">Projects Completed</p>
+                </div>
+                <div class="text-center stats-counter">
+                    <div class="text-3xl md:text-4xl font-bold gradient-text" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">50+</div>
+                    <p class="text-gray-600 mt-2">Expert Team</p>
+                </div>
+                <div class="text-center stats-counter">
+                    <div class="text-3xl md:text-4xl font-bold gradient-text" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">98%</div>
+                    <p class="text-gray-600 mt-2">Client Satisfaction</p>
+                </div>
+                <div class="text-center stats-counter">
+                    <div class="text-3xl md:text-4xl font-bold gradient-text" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">24/7</div>
+                    <p class="text-gray-600 mt-2">Support Available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Comprehensive technology solutions tailored to your business needs</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Security Systems -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=400&h=250&fit=crop" alt="Security Systems" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <div class="text-4xl mb-4 feature-icon" style="color: #667eea;">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Security Systems</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>CCTV Installation</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Access Control</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Fire Alarms</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Intrusion Detection</li>
+                    </ul>
+                </div>
+
+                <!-- Networking -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f70d504f0?w=400&h=250&fit=crop" alt="Networking" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <div class="text-4xl mb-4 feature-icon" style="color: #667eea;">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Networking & Data Management</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>LAN/WAN Setup</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Structured Cabling</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Enterprise WiFi</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Network Security</li>
+                    </ul>
+                </div>
+
+                <!-- Data Storage -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop" alt="Data Storage" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <div class="text-4xl mb-4 feature-icon" style="color: #667eea;">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Data Storage & Backup</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>NAS/SAN Solutions</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>RAID Systems</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Cloud Storage</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Disaster Recovery</li>
+                    </ul>
+                </div>
+
+                <!-- Solar & Green Energy -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e938aa1ef14?w=400&h=250&fit=crop" alt="Solar Energy" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <div class="text-4xl mb-4 feature-icon" style="color: #667eea;">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Solar & Green Energy</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Solar Panels</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Inverters</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Battery Systems</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Hybrid Solutions</li>
+                    </ul>
+                </div>
+
+                <!-- System Integration -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop" alt="System Integration" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <div class="text-4xl mb-4 feature-icon" style="color: #667eea;">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">System Integration</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Smart Systems</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Multi-Site Projects</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Custom Solutions</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Virtualization</li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop" alt="Support" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <div class="text-4xl mb-4 feature-icon" style="color: #667eea;">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">24/7 Support</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Technical Support</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Maintenance</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Training</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Fast Response</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="projects" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Showcasing our expertise across various sectors</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Project 1 -->
+                <div class="project-card bg-gray-100 rounded-xl overflow-hidden shadow-lg cursor-pointer">
+                    <div class="relative h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=400&h=300&fit=crop" alt="Residential CCTV" class="hero-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-gray-900 mb-2">Residential CCTV Upgrade</h3>
+                        <p class="text-gray-600 text-sm mb-4">8-camera system installation with smart monitoring</p>
+                        <div class="flex items-center text-purple-600 font-semibold text-sm">
+                            <span>View Details</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-gray-100 rounded-xl overflow-hidden shadow-lg cursor-pointer">
+                    <div class="relative h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f5ae4e8a83f?w=400&h=300&fit=crop" alt="Biometric Access" class="hero-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-gray-900 mb-2">Biometric Access Control</h3>
+                        <p class="text-gray-600 text-sm mb-4">Office-wide biometric system implementation</p>
+                        <div class="flex items-center text-purple-600 font-semibold text-sm">
+                            <span>View Details</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-gray-100 rounded-xl overflow-hidden shadow-lg cursor-pointer">
+                    <div class="relative h-48 bg-gradient-to-br from-yellow-400 to-orange-600 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e938aa1ef14?w=400&h=300&fit=crop" alt="Solar Setup" class="hero-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-gray-900 mb-2">Solar & Inverter Setup</h3>
+                        <p class="text-gray-600 text-sm mb-4">Complete hybrid solar system for duplex residence</p>
+                        <div class="flex items-center text-purple-600 font-semibold text-sm">
+                            <span>View Details</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-gray-100 rounded-xl overflow-hidden shadow-lg cursor-pointer">
+                    <div class="relative h-48 bg-gradient-to-br from-purple-400 to-indigo-600 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop" alt="WiFi Network" class="hero-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-gray-900 mb-2">Commercial WiFi Network</h3>
+                        <p class="text-gray-600 text-sm mb-4">Enterprise WiFi & network deployment</p>
+                        <div class="flex items-center text-purple-600 font-semibold text-sm">
+                            <span>View Details</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=500&fit=crop" alt="About SecureWave" class="about-image">
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About SecureWave Technology</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        SecureWave Technology is a leading provider of integrated technology solutions across Africa. We specialize in delivering cutting-edge security, networking, data management, and green energy solutions tailored to meet the unique needs of businesses and individuals.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        With a team of certified engineers and years of industry experience, we pride ourselves on delivering high-quality installations with exceptional customer service and 24/7 support.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">Our Mission</h4>
+                            <p class="text-gray-600">Provide reliable and intelligent solutions for safety and productivity.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">Our Vision</h4>
+                            <p class="text-gray-600">Become Africa's most trusted technology integrator.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">Our Values</h4>
+                            <p class="text-gray-600">Integrity • Professionalism • Innovation • Customer-First Service</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6 mt-16">
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">500+</div>
+                    <p class="text-gray-600 font-medium">Projects Completed</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">50+</div>
+                    <p class="text-gray-600 font-medium">Expert Team Members</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">98%</div>
+                    <p class="text-gray-600 font-medium">Client Satisfaction</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">24/7</div>
+                    <p class="text-gray-600 font-medium">Support Available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose SecureWave?</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Industry-leading expertise and commitment to excellence</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-bg text-white mb-4">
+                        <i class="fas fa-certificate text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">Certified Engineers</h3>
+                    <p class="text-gray-600">Our team consists of certified professionals with extensive industry knowledge and training.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-bg text-white mb-4">
+                        <i class="fas fa-clock text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">Years of Experience</h3>
+                    <p class="text-gray-600">With decades of combined experience, we deliver proven solutions and best practices.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-bg text-white mb-4">
+                        <i class="fas fa-star text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">Premium Equipment</h3>
+                    <p class="text-gray-600">We use only high-quality, industry-standard equipment for all installations.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-bg text-white mb-4">
+                        <i class="fas fa-bolt text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">Fast Deployment</h3>
+                    <p class="text-gray-600">Efficient project management ensures quick installation with minimal downtime.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-bg text-white mb-4">
+                        <i class="fas fa-phone text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">24/7 Support</h3>
+                    <p class="text-gray-600">Round-the-clock technical support to keep your systems running smoothly.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-bg text-white mb-4">
+                        <i class="fas fa-handshake text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">Customer First</h3>
+                    <p class="text-gray-600">Your satisfaction is our priority, with personalized solutions for every client.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Have questions? We're here to help. Contact us today!</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Phone</h4>
+                                <p class="text-gray-600 text-sm">+27 (0) 10 XXX XXXX</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Email</h4>
+                                <p class="text-gray-600 text-sm">info@securewave.co.za</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Address</h4>
+                                <p class="text-gray-600 text-sm">Johannesburg, South Africa</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">WhatsApp</h4>
+                                <p class="text-gray-600 text-sm">+27 (0) 10 XXX XXXX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6">Quick Contact</h3>
+                    <form id="contactForm" class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Name</label>
+                            <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" placeholder="Your Email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Phone</label>
+                            <input type="tel" placeholder="Your Phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Service</label>
+                            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" required>
+                                <option>Select a Service</option>
+                                <option>Security Systems</option>
+                                <option>Networking</option>
+                                <option>Data Storage</option>
+                                <option>Solar Energy</option>
+                                <option>System Integration</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full btn-primary text-white py-2 rounded-lg font-bold">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="space-y-6">
+                    <button class="w-full bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center" onclick="alert('Request Quote form would open')">
+                        <div class="text-4xl mb-4 gradient-text" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Request a Quote</h4>
+                        <p class="text-gray-600 text-sm mb-4">Get a customized quote for your project</p>
+                        <span class="text-purple-600 font-semibold">Start Now →</span>
+                    </button>
+
+                    <button class="w-full bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center" onclick="alert('Book Inspection form would open')">
+                        <div class="text-4xl mb-4 gradient-text" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Book Inspection</h4>
+                        <p class="text-gray-600 text-sm mb-4">Schedule a site visit with our experts</p>
+                        <span class="text-purple-600 font-semibold">Book Now →</span>
+                    </button>
+
+                    <button class="w-full bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition text-center" onclick="alert('WhatsApp chat would open')">
+                        <div class="text-4xl mb-4 gradient-text" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">WhatsApp Us</h4>
+                        <p class="text-gray-600 text-sm mb-4">Chat with us on WhatsApp for quick response</p>
+                        <span class="text-purple-600 font-semibold">Message Now →</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Map Placeholder -->
+            <div class="bg-gray-300 rounded-xl overflow-hidden shadow-lg h-96 flex items-center justify-center">
+                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&h=400&fit=crop" alt="Location Map" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                        <span class="font-bold text-xl">SecureWave</span>
+                    </div>
+                    <p class="text-gray-300 text-sm">Your trusted technology integrator across Africa.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>Security Systems</li>
+                        <li>Networking</li>
+                        <li>Data Storage</li>
+                        <li>Solar Energy</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li><span class="cursor-pointer hover:text-white" onclick="scrollToSection('about')">About Us</span></li>
+                        <li><span class="cursor-pointer hover:text-white" onclick="scrollToSection('projects')">Projects</span></li>
+                        <li><span class="cursor-pointer hover:text-white" onclick="scrollToSection('contact')">Contact</span></li>
+                        <li>Privacy Policy</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <button class="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 transition flex items-center justify-center">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button class="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 transition flex items-center justify-center">
+                            <i class="fab fa-twitter"></i>
+                        </button>
+                        <button class="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 transition flex items-center justify-center">
+                            <i class="fab fa-linkedin-in"></i>
+                        </button>
+                        <button class="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 transition flex items-center justify-center">
+                            <i class="fab fa-instagram"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 pt-8">
+                <div class="text-center text-gray-300 text-sm">
+                    <p>© SecureWave Technology — Security • Networking • Data Storage • Green Energy • Integration</p>
+                    <p class="mt-2">All Rights Reserved. | Designed for Excellence</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                closeMobileMenu();
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.remove('active');
+        }
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Smooth scroll for all anchor-like interactions
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                closeMobileMenu();
+            });
+        });
+    </script>
+</body>
+</html>
